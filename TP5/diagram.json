@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "author": "Maximiliano Lopez",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-stm32-bluepill",
+      "id": "bluepill",
+      "top": 204.08,
+      "left": -336.28,
+      "rotate": 45,
+      "attrs": {}
+    },
+    { "type": "wokwi-breadboard", "id": "bb1", "top": 200, "left": -200, "attrs": {} },
+    {
+      "type": "wokwi-logic-analyzer",
+      "id": "usb_ttl",
+      "top": 77.15,
+      "left": -480,
+      "attrs": { "channelNames": "GND,RXD,TXD,D3,D4,D5" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "ttl_titulo",
+      "top": 48,
+      "left": -470.4,
+      "attrs": { "text": "MÓDULO USB-TTL" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "lbl_gnd",
+      "top": 153.6,
+      "left": -518.4,
+      "attrs": { "text": "GND" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "lbl_rxd",
+      "top": 76.8,
+      "left": -518.4,
+      "attrs": { "text": "RXD" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "lbl_txd",
+      "top": 96,
+      "left": -518.4,
+      "attrs": { "text": "TXD" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn0",
+      "top": 553.4,
+      "left": -192,
+      "attrs": { "label": "PIN 1 (PA0)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 524.6,
+      "left": -115.2,
+      "attrs": { "label": "PIN 2 (PA1)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 486.2,
+      "left": -38.4,
+      "attrs": { "label": "PIN 3 (PA2)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn3",
+      "top": 447.8,
+      "left": 38.4,
+      "attrs": { "label": "PIN 4 (PA3)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn4",
+      "top": 399.8,
+      "left": 105.6,
+      "attrs": { "label": "PIN 5 (PA4)" }
+    },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 297.4,
+      "left": 222.9,
+      "rotate": 90,
+      "attrs": { "label": "ADC (PA7)" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_pb0",
+      "top": -62.56,
+      "left": 67.37,
+      "attrs": { "color": "white", "label": "PWM 1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_pb1",
+      "top": -33.76,
+      "left": 115.37,
+      "attrs": { "color": "green", "label": "PWM 2" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_pb10",
+      "top": -4.96,
+      "left": 163.37,
+      "attrs": { "color": "blue", "label": "Buzón 3" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_pb11",
+      "top": 23.84,
+      "left": 220.97,
+      "attrs": { "color": "yellow", "label": "Buzón 4" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_pb12",
+      "top": 43.04,
+      "left": 278.57,
+      "attrs": { "color": "red", "label": "Buzón 5" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "buzzer",
+      "top": 124.8,
+      "left": 432,
+      "rotate": 180,
+      "attrs": { "label": "Feedback" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_pb2",
+      "top": 62.24,
+      "left": 355.37,
+      "attrs": { "color": "red", "label": "Feedback" }
+    }
+  ],
+  "connections": [
+    [ "bluepill:GND.1", "bb1:tn.1", "black", [ "v0" ] ],
+    [ "bluepill:GND.2", "usb_ttl:GND", "black", [ "v0" ] ],
+    [ "bluepill:A9", "usb_ttl:D1", "green", [ "v0" ] ],
+    [ "bluepill:A10", "usb_ttl:D2", "blue", [ "v0" ] ],
+    [ "bluepill:A0", "btn0:1.l", "orange", [ "v0" ] ],
+    [ "bluepill:A1", "btn1:1.l", "orange", [ "v0" ] ],
+    [ "bluepill:A2", "btn2:1.l", "orange", [ "v0" ] ],
+    [ "bluepill:A3", "btn3:1.l", "orange", [ "v0" ] ],
+    [ "bluepill:A4", "btn4:1.l", "orange", [ "v0" ] ],
+    [ "btn0:2.l", "bb1:tn.2", "black", [ "v0" ] ],
+    [ "btn1:2.l", "bb1:tn.3", "black", [ "v0" ] ],
+    [ "btn2:2.l", "bb1:tn.4", "black", [ "v0" ] ],
+    [ "btn3:2.l", "bb1:tn.5", "black", [ "v0" ] ],
+    [ "btn4:2.l", "bb1:tn.6", "black", [ "v0" ] ],
+    [ "bluepill:A7", "pot1:SIG", "purple", [ "v0" ] ],
+    [ "bluepill:3V3.1", "pot1:VCC", "red", [ "v0" ] ],
+    [ "bb1:tn.10", "pot1:GND", "black", [ "v0" ] ],
+    [ "bluepill:B0", "led_pb0:A", "yellow", [ "v0" ] ],
+    [ "bluepill:B1", "led_pb1:A", "yellow", [ "v0" ] ],
+    [ "led_pb0:C", "bb1:tn.12", "black", [ "v0" ] ],
+    [ "led_pb1:C", "bb1:tn.13", "black", [ "v0" ] ],
+    [ "bluepill:B10", "led_pb10:A", "green", [ "v0" ] ],
+    [ "bluepill:B11", "led_pb11:A", "green", [ "v0" ] ],
+    [ "bluepill:B12", "led_pb12:A", "green", [ "v0" ] ],
+    [ "led_pb10:C", "bb1:tn.14", "black", [ "v0" ] ],
+    [ "led_pb11:C", "bb1:tn.15", "black", [ "v0" ] ],
+    [ "led_pb12:C", "bb1:tn.16", "black", [ "v0" ] ],
+    [ "bluepill:B13", "buzzer:2", "purple", [ "v0" ] ],
+    [ "buzzer:1", "bb1:tn.17", "black", [ "v0" ] ],
+    [ "bluepill:B14", "led_pb2:A", "red", [ "v0" ] ],
+    [ "led_pb2:C", "bb1:tn.18", "black", [ "v0" ] ],
+    [ "pot1:GND", "bb1:43b.g", "", [ "$bb" ] ],
+    [ "pot1:SIG", "bb1:43b.h", "", [ "$bb" ] ],
+    [ "pot1:VCC", "bb1:43b.i", "", [ "$bb" ] ]
+  ],
+  "dependencies": {}
+}
